@@ -5,11 +5,9 @@ let dayArray=["sön","mån","tis","ons","tor","fre","lör"];
 const timeUpdate = ()=>{
     let now = new Date();
     let day = now.getDay();
-    let hours = now.getHours();
-    let minutes = now.getMinutes();
-    let seconds = now.getSeconds();
+    let timeRn = now.toLocaleTimeString();
 
-    timeOnPage.innerText = `${dayArray[day]} ${hours}:${minutes}:${seconds}`
+    timeOnPage.innerText = `${dayArray[day]} ${timeRn}`
 
 }
 timeUpdate();
@@ -31,7 +29,11 @@ let slFillDiv = document.getElementById("slFillDiv");
 console.log(slFillDiv);
 
 slFillDiv.innerHTML += `<div>
-                            <div></div>
-                            <div></div>
+                            <div>
+                                
+                            </div>
+                            <div>
+
+                            </div>
                         </div>`;
 console.log(slFillDiv);
