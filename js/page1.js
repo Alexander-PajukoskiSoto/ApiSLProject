@@ -13,21 +13,25 @@ const timeUpdate = ()=>{
 timeUpdate();
 setInterval(timeUpdate , 900);
 
-
-const hudRes = fetch("https://api.sl.se/api2/realtimedeparturesV4.json?key=70bdaec5bfac4a329b4e63101cce107d&siteid=7006&timewindow=30")
-.then(hudRes => hudRes.json())
+//kan fixa tåg senare
+const flemRes = fetch("https://api.sl.se/api2/realtimedeparturesV4.json?key=70bdaec5bfac4a329b4e63101cce107d&siteid=7006&timewindow=30")
+.then(flemRes => flemRes.json())
 .then(data => console.log(data));
 
+
+// för bussarna Huddinge Sjukhus
 fetch("https://api.sl.se/api2/realtimedeparturesV4.json?key=70bdaec5bfac4a329b4e63101cce107d&siteid=7000&timewindow=30")
-.then(flemRes => flemRes.json())
+.then(hudRes => hudRes.json())
 
 .then(data => {
     data.ResponseData.Buses.forEach(info => {
         fillDivBusFunc(info)
     })
-    console.log(data)
 });
 
+fetch('https://api.openweathermap.org/data/2.5/weather?lat=59.2293827&lon=17.9748815&units=metric&appid=cfdeb26907457c26a1360e06821fc8b8')
+.then(weathRes => weathRes.json())
+.then(data => console.log(data));
 
 const fillDivBusFunc = (data)=>{
     let fillDivBus = document.getElementById("slFillDivBus");
