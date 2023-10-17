@@ -13,27 +13,22 @@ const timeUpdate = ()=>{
 timeUpdate();
 setInterval(timeUpdate , 900);
 
-fetch("https://api.sl.se/api2/typeahead.json?key=57dcc022c3a741a69222d78e5a189749&searchstring=flemmingsberg")
-.then(res => res.json())
-.then(res => console.log(res.ResponseData));
 
 const hudRes = fetch("https://api.sl.se/api2/realtimedeparturesV4.json?key=70bdaec5bfac4a329b4e63101cce107d&siteid=7000&timewindow=30")
 .then(hudRes => hudRes.json())
 .then(hudRes => console.log(hudRes));
 
-const flemRes = fetch("https://api.sl.se/api2/realtimedeparturesV4.json?key=70bdaec5bfac4a329b4e63101cce107d&siteid=7006&timewindow=30")
+fetch("https://api.sl.se/api2/realtimedeparturesV4.json?key=70bdaec5bfac4a329b4e63101cce107d&siteid=7006&timewindow=30")
 .then(flemRes => flemRes.json())
-.then(flemRes => console.log(flemRes.ResponseData.Buses));
+.then(flemRes => fillDivBus(flemRes));
 
-let slFillDiv = document.getElementById("slFillDiv");
 console.log(slFillDiv);
 
-slFillDiv.innerHTML += `<div>
-                            <div>
-                                
-                            </div>
-                            <div>
+const trainIcon = '<i class="fa-solid fa-train"></i>'
 
-                            </div>
-                        </div>`;
+let slFillDivBus = document.getElementById("slFillDivBus");
+const fillDivBus = ()=>{
+    
+}
+
 console.log(slFillDiv);
