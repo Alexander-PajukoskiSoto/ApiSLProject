@@ -60,3 +60,21 @@ body{
     color: wheat;
     font-size:1.9em;
 }
+.blåbuss{
+    background-color: rgb(79, 79, 250);
+    padding: 3px;
+    margin: auto;
+    border-radius: 2px;
+}
+.null{
+    background-color: rgb(248, 57, 57);
+    padding: 3px;
+    margin: auto;
+    border-radius: 2px;
+}
+.Ersättningsbuss{
+    background-color: rgb(228, 155, 76);
+    padding: 3px;
+    margin: auto;
+    border-radius: 2px;
+}

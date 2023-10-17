@@ -33,22 +33,19 @@ const fillDivBusFunc = (data)=>{
     let leftDiv= document.createElement('div');
     let rightDiv= document.createElement('div');
     let div = document.createElement('div')
+    let numDiv = document.createElement('div')
     let icon= document.createElement('i');
 
+    //textNodes
+    let lineNumber = document.createTextNode(data.LineNumber);
 
     //Classes
-    icon.setAttribute('class',data.GroupOfLine)
-    let redBus = document.querySelector(".null");
-    let blueBus =document.querySelector(".blåbuss");
-    let eBus =document.querySelector(".Ersättningsbuss");
+    icon.setAttribute('class', " fa-solid fa-bus")
+    numDiv.setAttribute('class',data.GroupOfLine)
 
     //append
-    div.append(leftDiv,rightDiv)
-    leftDiv.append(icon)
+    numDiv.appendChild(lineNumber);
+    div.append(leftDiv,rightDiv);
+    leftDiv.append(icon, numDiv);
     fillDivBus.append(div);
- 
-    redBus.setAttribute('class','fa-solid fa-bus');
-    blueBus.setAttribute('class','fa-solid fa-bus');
-    eBus.setAttribute('class','fa-solid fa-bus');
-    
 }
