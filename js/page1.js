@@ -47,7 +47,7 @@ const fillDivBusFunc = (data)=>{
     //Classes
     icon.setAttribute('class', " fa-solid fa-bus");
     numDiv.setAttribute('class',data.GroupOfLine);
-
+    rightDiv.setAttribute('class', 'pushRight')
     //append text
     dTimeDiv.appendChild(dTime);
     desDiv.appendChild(destination);
