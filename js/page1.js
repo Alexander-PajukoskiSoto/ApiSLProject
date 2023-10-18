@@ -1,6 +1,6 @@
 let timeOnPage = document.getElementById("timeSpan");
 
-let dayArray=["sön","mån","tis","ons","tor","fre","lör"];
+let dayArray=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
 
 const timeUpdate = ()=>{
     let now = new Date();
@@ -78,8 +78,11 @@ const fillWeathBox = (data)=>{
     let tomorrowDiv = document.getElementById("tomorrowDiv");
     let imageInside = document.getElementById("currentWeatherImage");
     let tempToday = document.getElementById("tempToday");
+    let feelsLike = document.getElementById("feelsLike");
     let otherInfo = document.getElementById("otherInfo");
-    imageInside.setAttribute("src",`../images/${data.weather[0].description}.png`);
-    tempToday.innerHTML = `${(Math.floor(data.main.temp + 0.5))} &#8451;`
-    otherInfo.innerHTML = ``
+    imageInside.setAttribute("src",'https://openweathermap.org/img/wn/'+ data.weather[0].icon +'@4x.png');
+    tempToday.innerHTML = `${(Math.floor(data.main.temp + 0.5))}&#8451;`
+    feelsLike.innerHTML = `Känns som: ${Math.floor(data.main.feels_like + 0.5)}&#8451`
+    otherInfo.innerHTML = `Vindhastighet: ${data.wind.speed}m/s Tryck: ${data.main.pressure}hPa Fuktighet: ${data.main.humidity}% Synlighet: ${Math.floor((data.visibility/1000)+.5)}km`
+
 }
