@@ -20,7 +20,7 @@ const flemRes = fetch("https://api.sl.se/api2/realtimedeparturesV4.json?key=70bd
 
 
 // för bussarna Huddinge Sjukhus
-fetch("https://api.sl.se/api2/realtimedeparturesV4.json?key=70bdaec5bfac4a329b4e63101cce107d&siteid=7000&timewindow=30")
+fetch("https://api.sl.se/api2/realtimedeparturesV4.json?key=70bdaec5bfac4a329b4e63101cce107d&siteid=7000&timewindow=15")
 .then(hudRes => hudRes.json())
 
 .then(data => {
@@ -67,9 +67,19 @@ const fillDivBusFunc = (data)=>{
 
 fetch('https://api.openweathermap.org/data/2.5/weather?lat=59.2293827&lon=17.9748815&units=metric&appid=cfdeb26907457c26a1360e06821fc8b8')
 .then(weathRes => weathRes.json())
-.then(data => console.log(data));
+.then(data => fillWeathBox(data));
 
 
-//elements
-let todayDiv = document.getElementById("todayDiv");
-let tomorrowDiv = document.getElementById("tomorrowDiv");
+const fillWeathBox = (data)=>{
+
+    //element gets
+    console.log(data);
+    let todayDiv = document.getElementById("todayDiv");
+    let tomorrowDiv = document.getElementById("tomorrowDiv");
+    let imageInside = document.getElementById("currentWeatherImage");
+    let tempToday = document.getElementById("tempToday");
+    let otherInfo = document.getElementById("otherInfo");
+    imageInside.setAttribute("src",`../images/${data.weather[0].description}.png`);
+    tempToday.innerHTML = `${(Math.floor(data.main.temp + 0.5))} &#8451;`
+    otherInfo.innerHTML = ``
+}
