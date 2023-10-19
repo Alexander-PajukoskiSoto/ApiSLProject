@@ -18,11 +18,6 @@ const flemRes = fetch("https://api.sl.se/api2/realtimedeparturesV4.json?key=70bd
 .then(flemRes => flemRes.json())
 
 
-
-// REMOVE LATER
-// .then(data => console.log(data));
-
-
 // för bussarna Huddinge Sjukhus
 fetch("https://api.sl.se/api2/realtimedeparturesV4.json?key=70bdaec5bfac4a329b4e63101cce107d&siteid=7000&timewindow=15")
 .then(hudRes => hudRes.json())
@@ -77,11 +72,6 @@ fetch('https://api.openweathermap.org/data/2.5/weather?lat=59.2293827&lon=17.974
 const fillWeathBox = (data)=>{
 
     //element gets
-
-
-    // REMOVE LATER
-    // console.log(data);
-
     let imageInside = document.getElementById("currentWeatherImage");
     let tempToday = document.getElementById("tempToday");
     let feelsLike = document.getElementById("feelsLike");
