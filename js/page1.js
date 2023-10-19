@@ -13,12 +13,7 @@ const timeUpdate = ()=>{
 timeUpdate();
 setInterval(timeUpdate , 900);
 
-//kan fixa tåg senare
-const flemRes = fetch("https://api.sl.se/api2/realtimedeparturesV4.json?key=70bdaec5bfac4a329b4e63101cce107d&siteid=7006&timewindow=30")
-.then(flemRes => flemRes.json())
 
-
-// för bussarna Huddinge Sjukhus
 fetch("https://api.sl.se/api2/realtimedeparturesV4.json?key=70bdaec5bfac4a329b4e63101cce107d&siteid=7000&timewindow=15")
 .then(hudRes => hudRes.json())
 
