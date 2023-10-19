@@ -1,0 +1,43 @@
+@font-face {
+    font-family:"roboto";
+    src: url(../fonts/Roboto-Light.ttf);
+}
+*{
+    font-family:'roboto', 'Courier New', Courier, monospace;
+    overflow: hidden;
+}
+#fullDiv{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#fillCalendar{
+    width: 80%;
+    height: 80%;
+    border: solid rgb(60, 59, 59);
+    background-color: rgb(208, 255, 255);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#timeDiv{
+    margin-bottom: 20px;
+}
+.testDiv{
+    width: 95%;
+    height: 15%;
+    text-align: center;
+    background-color: rgb(250, 176, 38);
+    border: solid rgb(60, 59, 59);
+    border-radius: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+}
