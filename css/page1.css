@@ -119,12 +119,15 @@ h1{
 /* div for week ahead :D */
 #tomorrowDiv{
     width: 80%;
-    background-color: red;
+    background-color: rgb(176, 218, 221);
     height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    font-weight: bold;
+    border: solid 1px rgb(0, 0, 0);
+    border-radius: 2px;
 }
 
 /* div inside */
@@ -150,4 +153,33 @@ h1{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+.weatherType{
+    font-size: 8px;
+    color: rgb(120, 120, 120);
+    text-align: center;
+    height:90%;
+    align-self: center;
+}
+.smallImg{
+    width: 30px;
+}
+#bookDiv{
+    display: flex;
+    justify-content: center;
+}
+
+/* mainFill bookDiv */
+#bookDiv>div{
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    height: 10%;
+    background-color: rebeccapurple;
+}
+.bookPlace{
+    font-size:3em;
+}
+.bookContainer{
+    width: 80%;
 }

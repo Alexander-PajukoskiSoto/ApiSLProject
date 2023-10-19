@@ -16,7 +16,11 @@ setInterval(timeUpdate , 900);
 //kan fixa tåg senare
 const flemRes = fetch("https://api.sl.se/api2/realtimedeparturesV4.json?key=70bdaec5bfac4a329b4e63101cce107d&siteid=7006&timewindow=30")
 .then(flemRes => flemRes.json())
-.then(data => console.log(data));
+
+
+
+// REMOVE LATER
+// .then(data => console.log(data));
 
 
 // för bussarna Huddinge Sjukhus
@@ -73,9 +77,11 @@ fetch('https://api.openweathermap.org/data/2.5/weather?lat=59.2293827&lon=17.974
 const fillWeathBox = (data)=>{
 
     //element gets
-    console.log(data);
-    let todayDiv = document.getElementById("todayDiv");
-    let tomorrowDiv = document.getElementById("tomorrowDiv");
+
+
+    // REMOVE LATER
+    // console.log(data);
+
     let imageInside = document.getElementById("currentWeatherImage");
     let tempToday = document.getElementById("tempToday");
     let feelsLike = document.getElementById("feelsLike");
@@ -85,4 +91,54 @@ const fillWeathBox = (data)=>{
     feelsLike.innerHTML = `Känns som: ${Math.floor(data.main.feels_like + 0.5)}&#8451`
     otherInfo.innerHTML = `Vindhastighet: ${data.wind.speed}m/s Tryck: ${data.main.pressure}hPa Fuktighet: ${data.main.humidity}% Synlighet: ${Math.floor((data.visibility/1000)+.5)}km`
 
+}
+
+
+fetch("https://api.openweathermap.org/data/2.5/forecast?q=Huddinge&appid=cfdeb26907457c26a1360e06821fc8b8&cnt=45&units=metric")
+.then(foreRes => foreRes.json())
+// .then(data => console.log(data))
+.then(data => {
+    data.list.forEach(info => {
+        fillTmrwDiv(info)
+    })
+});
+
+
+const fillTmrwDiv = (data) =>{
+    if(data.dt_txt.slice(11) == "15:00:00"){
+        
+        // all the elements needed
+        let fillDiv = document.getElementById("tomorrowDiv");
+        let mainFill = document.createElement("div");
+        let dDivDiv = document.createElement("div");
+        let imgAndPDiv = document.createElement("div");
+        let dateP = document.createElement("div");
+        let img = document.createElement("img");
+        let minMax = document.createElement("div");
+        let weatherType = document.createElement("div");
+
+
+        // Structure
+        imgAndPDiv.append(img,minMax);
+        dDivDiv.append(imgAndPDiv,weatherType);
+        mainFill.append(dateP,dDivDiv);
+        fillDiv.append(mainFill);
+
+        //Attributes
+        weatherType.setAttribute("class","weatherType");
+        img.setAttribute("class", "smallImg")
+        img.setAttribute('src','https://openweathermap.org/img/wn/'+ data.weather[0].icon +'@4x.png')
+
+        //contentNodes
+        let weatherTypeContent = document.createTextNode(data.weather[0].description);
+        let minMaxContent = document.createTextNode(`${Math.floor(data.main.temp_max + .5)}/${Math.floor(data.main.temp_min + .5)}`);
+        let datePContent = document.createTextNode(data.dt_txt.slice(0,-8));
+
+        //append Nodes
+        weatherType.appendChild(weatherTypeContent);
+        minMax.appendChild(minMaxContent);
+        dateP.appendChild(datePContent);
+
+        console.log(data);
+    }
 }
