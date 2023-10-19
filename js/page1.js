@@ -138,7 +138,46 @@ const fillTmrwDiv = (data) =>{
         weatherType.appendChild(weatherTypeContent);
         minMax.appendChild(minMaxContent);
         dateP.appendChild(datePContent);
-
-        console.log(data);
     }
+}
+fetch("https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=GAAJ35pHq420JJRdBIWRTOCi78kSDlQW")
+.then(res=>res.json())
+.then(data => {
+    data.results.books.slice(0,5).forEach(info => {
+        fillBookDiv(info)
+    })
+});
+const fillBookDiv = (data)=>{
+
+    // Ids
+    let bookDiv = document.getElementById("bookDiv")
+    //Create element
+    let mainFill = document.createElement("div");
+    let bookPlace = document.createElement("div");
+    let bookContainer = document.createElement("div");
+    let bookTitle = document.createElement("div");
+    let bookPub = document.createElement("div");
+
+    //Attributes
+    bookPlace.setAttribute("class","bookPlace");
+    bookContainer.setAttribute("class","bookContainer");
+    bookTitle.setAttribute("class","bookTitle");
+    bookPub.setAttribute("class","bookPub");
+
+    //TextNodes
+    console.log(data)
+
+    let bookPlaceText = document.createTextNode(data.rank);
+    let bookTitleText = document.createTextNode(data.title);
+    let bookPubText = document.createTextNode(data.publisher);
+
+    //Append texts
+    bookPlace.appendChild(bookPlaceText);
+    bookTitle.appendChild(bookTitleText);
+    bookPub.appendChild(bookPubText);
+
+    //Apend elements
+    bookDiv.append(mainFill);
+    mainFill.append(bookPlace, bookContainer);
+    bookContainer.append(bookTitle,bookPub);
 }
