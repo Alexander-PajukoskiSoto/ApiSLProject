@@ -15,7 +15,6 @@ fetch("https://www.googleapis.com/calendar/v3/calendars/c_d9aaaa6aa5b776b23b57ec
 });
 
 let calendarArray = [];
-let counter = 0;
 
 const sortArray = (data)=> {
     let date = new Date();
@@ -24,7 +23,6 @@ const sortArray = (data)=> {
     if(date.toLocaleDateString() == data.start.dateTime.slice(0,-15)){
         let date = new Date();
         
-        counter ++;
         calendarArray.push(`${data.start.dateTime.slice(11,-9)} ${data.summary}`);
         calendarArray.sort();
     }
@@ -32,7 +30,10 @@ const sortArray = (data)=> {
 
 }
 
+let counter = 0;
+
 const fillCalendar = ()=>{
+    counter++;
     //Ids
     let fillDiv = document.getElementById("fillCalendar");
 
@@ -40,7 +41,7 @@ const fillCalendar = ()=>{
     let div = document.createElement("div");
 
     //create text node
-    let divText = document.createTextNode(calendarArray);
+    let divText = document.createTextNode(calendarArray[counter-1]);
 
     //apend text
     div.append(divText);
