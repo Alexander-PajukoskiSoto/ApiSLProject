@@ -1,14 +1,16 @@
+/*Fonts*/
 @font-face {
     font-family:"roboto";
     src: url(../fonts/Roboto-Light.ttf);
 }
-
+/*Default*/
 *{
     margin: 0;
     padding: 0;
     font-size:12px;
     font-family:'roboto', 'Times New Roman', Times, serif;
 }
+/**/
 body{
     display: flex;
     height: 100vh;
@@ -52,6 +54,7 @@ body{
     justify-content: space-between;
     align-items: center;
 }
+/*Further down div-chain*/
 #slDiv > div > div > div{
     width: 50%;
     height: 90%;
@@ -60,31 +63,37 @@ body{
     display: flex;
     align-items: center;
 }
+/*Centered timespan*/
 #timeSpan{
     margin: auto;
 }
+/*Icon styling*/
 .fa-solid{
     color: rgb(0, 0, 0);
     font-size:1.9em;
 }
+/*style to added class through API key*/
 .blåbuss{
     background-color: rgb(79, 79, 250);
     padding: 3px;
     margin-right: auto;
     border-radius: 2px;
 }
+/*Same here*/
 .null{
     background-color: rgb(248, 57, 57);
     padding: 3px;
     margin-right: auto;
     border-radius: 2px;
 }
+/*Same here*/
 .Ersättningsbuss{
     background-color: rgb(228, 155, 76);
     padding: 3px;
     margin-right: auto;
     border-radius: 2px;
 }
+/*Class added through JS but not API */
 .pushRight{
     display: flex;
     justify-content: center;
@@ -94,13 +103,14 @@ h1{
 }
 
 /* VÄDER VÄDER VÄDER VÄDER VÄDER VÄDER VÄDER VÄDER VÄDER VÄDER VÄDER VÄDER VÄDER VÄDER VÄDER VÄDER VÄDER VÄDER  */
-
+/*Centering contents*/
 #weathDiv{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
+/*Center and styling contents*/
 #todayDiv{
     width: 70%;
     background-color: rgb(176, 218, 221);
@@ -152,6 +162,7 @@ h1{
     flex-direction: row;
     justify-content: space-around;
 }
+/*Class added through JS*/
 .weatherType{
     font-size: 8px;
     color: rgb(120, 120, 120);
@@ -159,9 +170,13 @@ h1{
     height:90%;
     align-self: center;
 }
+/*Making sure the image is small (Class added through JS)*/
 .smallImg{
     width: 30px;
 }
+/*BOOK BOOK BOOK BOOK BOOK BOOK BOOK BOOK BOOK BOOK BOOK BOOK BOOK BOOK BOOK BOOK BOOK BOOK BOOK BOOK BOOK BOOK BOOK BOOK BOOK BOOK BOOK BOOK BOOK BOOK BOOK BOOK BOOK BOOK BOOK BOOK BOOK*/
+/**/
+/*Main book div*/
 #bookDiv{
     display: flex;
     justify-content: center;
@@ -181,16 +196,20 @@ h1{
     border-radius: 5px;
     border:solid rgb(0, 0, 0);
 }
+/*placement*/
 .bookPlace{
     font-size:3em;
 }
+/*totle*/
 .bookTitle{
     font-size:2em ;
     overflow: hidden;
 }
+/*the box*/
 .bookContainer{
     width: 80%;
 }
+/*publisher*/
 .bookPub{
     font-weight: bold;
     color: rgb(117, 138, 156);
