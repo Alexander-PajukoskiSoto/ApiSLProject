@@ -8,28 +8,42 @@
     <script src="https://kit.fontawesome.com/f5139ef0fc.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <!--The clock-to-be-->
     <h1 id="timeSpan"></h1>
+    <!--Main divs for each section-->
     <div id="divForDiv">
+        <!--Sl div-->
         <div id="slDiv">
+            <!--The div that is filled with JS (sl)-->
             <div id="slFillDivBus">
 
             </div>
         </div>
+        <!--The div that is filled with JS (weather)-->
         <div id="weathDiv">
+            <!--Div that shows todays weather-->
             <div id="todayDiv">
+                <!--Hardcoded location-->
                 <h1>Huddinge, SE</h1>
-                <img alt="current weather" width="100px" id="currentWeatherImage">   
+                <!--Image that has src replaced in JS-->
+                <img alt="current weather" width="100px" id="currentWeatherImage">
+                <!--Todays temp (from API)-->
                 <h1 id="tempToday"></h1>
+                <!--What it feels like (API)-->
                 <h2 id="feelsLike">feelslike</h2>
+                <!-- sampletext (is replaced with API through JS)-->
                 <p id="otherInfo">känns som 21*c, vind:snabbt, <br> hPa9999, humidity64%, dew point 0*c, visibility 20km </p>
             </div>
+                <!-- 5 day forecast-->
             <div id="tomorrowDiv">
 
             </div>
         </div>
+        <!--The div that is filled with JS (books)-->
         <div id="bookDiv">
         </div>
     </div>
+    <!--script-->
     <script src="../js/page1.js"></script>
 </body>
 </html>
